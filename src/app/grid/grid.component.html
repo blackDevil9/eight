@@ -1,0 +1,39 @@
+
+
+<div style="font-size: 13px; font-family: Verdana; float: left">
+
+        <jqxListBox style="float: left; margin-bottom: 20px" (onCheckChange)="myListBoxOnCheckChange($event)" [width]="200" [height]="200"
+            [source]="listBoxSource" [checkboxes]="true">
+        </jqxListBox>
+
+
+    <!-- <jqxGrid [theme]="'material'" #myGrid (onPagechanged)="onPageChanged($event)" (onPagesizechanged)="onPageSizeChanged($event)" [width]="getWidth()" [source]="dataAdapter" [columns]="columns"
+        [sortable]="true" [altrows]="true" [selectionmode]="'multiplecellsadvanced'">
+    </jqxGrid> -->
+
+    <jqxGrid #myGrid (onPagechanged)="onPageChanged($event)" (onPagesizechanged)="onPageSizeChanged($event)"
+        [width]="getWidth()" [source]="dataAdapter" [columns]="columns" [pageable]="true" [sortable]="true"
+        [columnsresize]="true" [autoheight]="true" [selectionmode]="'multiplerowsextended'">
+    </jqxGrid>
+
+    <div style="margin-top: 20px">
+        <div style="float: left">
+            <jqxButton [theme]="'material'" (onClick)="excelBtnOnClick()">Export to Excel</jqxButton>
+            <br /><br />
+            <jqxButton [theme]="'material'" (onClick)="xmlBtnOnClick()">Export to XML</jqxButton>
+        </div>
+        <div style="float: left; margin-left: 10px">
+            <jqxButton [theme]="'material'" (onClick)="csvBtnOnClick()">Export to CSV</jqxButton>
+            <br /><br />
+            <jqxButton [theme]="'material'" (onClick)="tsvBtnOnClick()">Export to TSV</jqxButton>
+        </div>
+        <div style="float: left; margin-left: 10px">
+            <jqxButton [theme]="'material'" (onClick)="htmlBtnOnClick()">Export to HTML</jqxButton>
+            <br /><br />
+            <jqxButton [theme]="'material'" (onClick)="jsonBtnOnClick()">Export to JSON</jqxButton>
+        </div>
+        <div style="float: left; margin-left: 10px">
+            <jqxButton [theme]="'material'" (onClick)="pdfBtnOnClick()">Export to PDF</jqxButton>
+        </div>
+    </div>
+</div>
