@@ -1,17 +1,10 @@
-
-
 <div style="font-size: 13px; font-family: Verdana; float: left">
 
-        <jqxListBox style="float: left; margin-bottom: 20px" (onCheckChange)="myListBoxOnCheckChange($event)" [width]="200" [height]="200"
-            [source]="listBoxSource" [checkboxes]="true">
-        </jqxListBox>
+    <jqxListBox style="float: left; margin-bottom: 20px" (onCheckChange)="myListBoxOnCheckChange($event)" [width]="200"
+        [height]="200" [source]="listBoxSource" [checkboxes]="true">
+    </jqxListBox>
 
-
-    <!-- <jqxGrid [theme]="'material'" #myGrid (onPagechanged)="onPageChanged($event)" (onPagesizechanged)="onPageSizeChanged($event)" [width]="getWidth()" [source]="dataAdapter" [columns]="columns"
-        [sortable]="true" [altrows]="true" [selectionmode]="'multiplecellsadvanced'">
-    </jqxGrid> -->
-
-    <jqxGrid #myGrid (onPagechanged)="onPageChanged($event)" (onPagesizechanged)="onPageSizeChanged($event)"
+    <jqxGrid #myGrid 
         [width]="getWidth()" [source]="dataAdapter" [columns]="columns" [pageable]="true" [sortable]="true"
         [columnsresize]="true" [autoheight]="true" [selectionmode]="'multiplerowsextended'">
     </jqxGrid>

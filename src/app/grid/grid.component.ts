@@ -1,6 +1,5 @@
-import { Component, ElementRef, Injectable, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
-import { jqxPanelComponent } from 'jqwidgets-ng/jqxpanel';
 
 import { generatedata } from 'src/assets/generatedata';
 
@@ -13,9 +12,6 @@ import { generatedata } from 'src/assets/generatedata';
 export class GridComponent implements OnInit {
 
   @ViewChild('myGrid', { static: false }) myGrid: jqxGridComponent;
-  @ViewChild('myPanel', { static: false }) myPanel: jqxPanelComponent;
-  @ViewChild('eventsLog', { static: false }) eventsLog: ElementRef;
-  @ViewChild('pagingInfo', { static: false }) pagingInfo: ElementRef;
 
 
   source: any =
@@ -72,57 +68,33 @@ export class GridComponent implements OnInit {
     }
     this.myGrid.endupdate();
   };
-
-  onPageChanged(event: any): void {
-    this.eventsLog.nativeElement.style.display = 'block';
-    let loggedElements = document.getElementsByClassName('logged');
-    if (loggedElements.length >= 5) {
-      this.myPanel.clearcontent();
-    }
-    let args = event.args;
-    let eventData = 'pagechanged <div>Page:' + args.pagenum + ', Page Size: ' + args.pagesize + '</div>';
-    this.myPanel.prepend('<div class="logged" style="margin-top: 5px;">' + eventData + '</div>');
-    // get page information.
-    let paginginformation = this.myGrid.getpaginginformation();
-    this.pagingInfo.nativeElement.innerHTML = '<div style="margin-top: 5px;">Page:' + paginginformation.pagenum + ', Page Size: ' + paginginformation.pagesize + ', Pages Count: ' + paginginformation.pagescount + '</div>';
-  }
-  onPageSizeChanged(event: any): void {
-    this.eventsLog.nativeElement.style.display = 'block';
-    this.myPanel.clearcontent();
-    let args = event.args;
-    let eventData = 'pagesizechanged <div>Page:' + args.pagenum + ', Page Size: ' + args.pagesize + ', Old Page Size: ' + args.oldpagesize + '</div>';
-    this.myPanel.prepend('<div style="margin-top: 5px">' + eventData + '</div>');
-    // get page information.
-    let paginginformation = this.myGrid.getpaginginformation();
-    this.pagingInfo.nativeElement.innerHTML = '<div style="margin-top: 5px;">Page:' + paginginformation.pagenum + ', Page Size: ' + paginginformation.pagesize + ', Pages Count: ' + paginginformation.pagescount + '</div>';
-  }
   
   excelBtnOnClick() {
-    this.myGrid.exportdata('xls', 'jqxGrid', true, null, true, 'https://jqwidgets.com/export_server/dataexport.php');
+    this.myGrid.exportdata('xls', 'jqxGrid');
   };
 
   xmlBtnOnClick() {
-    this.myGrid.exportdata('xml', 'jqxGrid', true, null, true, 'https://jqwidgets.com/export_server/dataexport.php');
+    this.myGrid.exportdata('xml', 'jqxGrid');
   };
 
   csvBtnOnClick() {
-    this.myGrid.exportdata('csv', 'jqxGrid', true, null, true, 'https://jqwidgets.com/export_server/dataexport.php');
+    this.myGrid.exportdata('csv', 'jqxGrid');
   };
 
   tsvBtnOnClick() {
-    this.myGrid.exportdata('tsv', 'jqxGrid', true, null, true, 'https://jqwidgets.com/export_server/dataexport.php');
+    this.myGrid.exportdata('tsv', 'jqxGrid');
   };
 
   htmlBtnOnClick() {
-    this.myGrid.exportdata('html', 'jqxGrid', true, null, true, 'https://jqwidgets.com/export_server/dataexport.php');
+    this.myGrid.exportdata('html', 'jqxGrid');
   };
 
   jsonBtnOnClick() {
-    this.myGrid.exportdata('json', 'jqxGrid', true, null, true, 'https://jqwidgets.com/export_server/dataexport.php');
+    this.myGrid.exportdata('json', 'jqxGrid');
   };
 
   pdfBtnOnClick() {
-    this.myGrid.exportdata('pdf', 'jqxGrid', true, null, true, 'https://jqwidgets.com/export_server/dataexport.php');
+    this.myGrid.exportdata('pdf', 'jqxGrid');
   };
 
   constructor() { }
