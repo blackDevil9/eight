@@ -1,5 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { jqxGridComponent } from 'jqwidgets-ng/jqxgrid'
 
 @Component({
   selector: 'app-root',

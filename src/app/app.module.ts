@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { GridComponent } from './grid/grid.component';
 
 import { jqxGridModule } from 'jqwidgets-ng/jqxgrid';
-
 import { jqxListBoxModule } from 'jqwidgets-ng/jqxlistbox';
 import { jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
 

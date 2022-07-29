@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
 import { jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 
 import { generatedata } from 'src/assets/generatedata';
